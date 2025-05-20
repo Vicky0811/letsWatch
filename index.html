@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>letsWatch Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-container">
+    <img src="lets watch.png" alt="Logo" class="logo" />
+    <h1><i>letsWatch</i></h1>
+    <h2>Sign in </h2> 
+    <form id="loginForm">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter password" required />
+
+      <button type="submit">Login</button>
+      <p class="error-msg" id="errorMsg"></p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Demo login (for testing only)
+      if (username === "admin" && password === "admin") {
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("errorMsg").textContent = "Invalid username or password.";
+      }
+    });
+  </script>
+</body>
+</html>
